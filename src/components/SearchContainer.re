@@ -42,12 +42,14 @@ let make = (_children) => {
   render: _self => {
     let { volumes } = _self.state;
     <>
-      <SearchBar
-        onInputChange=(
-          searchText => _self.send(UpdateSearchText(searchText))
-        )
-        onSearch=(_ => _self.send(Search))
-      />
+      <div className="my-4">
+        <SearchBar
+          onInputChange=(
+            searchText => _self.send(UpdateSearchText(searchText))
+          )
+          onSearch=(_ => _self.send(Search))
+        />
+      </div>
       <SearchResult volumes=volumes />
     </>
   }

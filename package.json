@@ -4,7 +4,6 @@
   "scripts": {
     "build": "bsb -make-world && yarn webpack:production",
     "start": "concurrently \"yarn watch-bsb\" \"yarn server\" -k",
-    "dev": "yarn watch-bsb",
     "watch-bsb": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "test": "echo \"Error: no test specified\" && exit 1",

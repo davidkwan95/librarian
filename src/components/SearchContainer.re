@@ -44,7 +44,7 @@ let make = _children => {
           onInputChange={searchText =>
             _self.send(UpdateSearchText(searchText))
           }
-          onSearch={_ => _self.send(Search)}
+          actionSearch={_ => _self.send(Search)}
         />
       </div>
       <SearchResult volumes />

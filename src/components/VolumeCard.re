@@ -27,6 +27,12 @@ let make = (~volume: VolumeModules.volume, _children) => {
       | Some(publisher) =>
         <div> {ReasonReact.string("Published by " ++ publisher)} </div>
       };
+    let imageLink =
+      Js.String.replace(
+        "http://",
+        "https://",
+        volume.info.imageLinks.thumbnail,
+      );
 
     <div className={"card m-3 " ++ Styles.card}>
       <a
@@ -38,10 +44,7 @@ let make = (~volume: VolumeModules.volume, _children) => {
         )}>
         <div className="row no-gutters">
           <div className="col-md-4">
-            <img
-              src={volume.info.imageLinks.thumbnail}
-              className={"card-img " ++ Styles.cardImage}
-            />
+            <img src=imageLink className={"card-img " ++ Styles.cardImage} />
           </div>
           <div className="col-md-8">
             <div className="card-body">
